@@ -19,15 +19,9 @@
 
 .Home__content-items {
   flex: 1;
-  /* flex: 1;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  grid-auto-rows: minmax(120px, auto);
-  gap: 1em; */
 }
 
 .Home__content-details {
-  /* display: none; */
   width: 400px;
-  border: 1px solid black;
+  margin-top: 1.5rem;
 }

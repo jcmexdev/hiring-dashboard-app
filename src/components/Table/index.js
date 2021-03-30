@@ -35,6 +35,7 @@ const Table = (props) => {
   const renderPages = () => {
     return Object.keys(state.data).map((el) => (
       <PaginationButton
+        key={el}
         currentPage={state.page}
         pageNumber={el}
         setPage={handleClick}
@@ -51,7 +52,7 @@ const Table = (props) => {
     if (state.data.length === 0) return;
     return state.data[state.page].map((el) => {
       return (
-        <tr>
+        <tr key={el.id}>
           <td>
             <img
               src="http://via.placeholder.com/40x40"
@@ -67,7 +68,12 @@ const Table = (props) => {
           <td>{el.experiencia} Años</td>
           <td>{el.edad} Años</td>
           <td>
-            <button>Ver Info</button>
+            <button
+              className="Table__button"
+              onClick={() => props.handleSelected(el)}
+            >
+              Ver Info
+            </button>
           </td>
         </tr>
       );

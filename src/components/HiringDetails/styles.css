@@ -1,0 +1,55 @@
+.HiringDetails {
+  padding: 1rem;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0px 0px 10px rgba(100, 100, 100, 0.2);
+  position: relative;
+}
+
+.HiringDetails__profile {
+  display: flex;
+  align-items: center;
+}
+
+.HiringDetails__profile img {
+  width: 100px;
+  height: 100px;
+  margin-right: 1rem;
+}
+
+.HiringDetails__profile-contact {
+  display: flex;
+  justify-content: space-around;
+  padding: 2rem 0rem;
+}
+
+.HiringDetails__profile-contact img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.HiringDetails__profile-details-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0rem;
+}
+
+.HiringDetails__times {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 30px;
+  height: 30px;
+  border-radius: 4px;
+  border: none;
+  background-color: #e6e6e6;
+  font-weight: bold;
+}
+
+.HiringDetails__times:hover {
+  background-color: #651fff;
+  font-weight: bold;
+  color: white;
+}

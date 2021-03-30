@@ -1,6 +1,6 @@
-import Card from "./components/Card";
+import React, { useState, useEffect } from "react";
 import Hero from "./components/Hero";
-import Search from "./components/Search";
+import HiringDetails from "./components/HiringDetails";
 import Table from "./components/Table";
 import "./Home.css";
 
@@ -408,26 +408,33 @@ function App() {
     },
   ];
 
+  const [state, setState] = useState({ item: null });
+
+  const handleInformation = (item) => {
+    setState({ item });
+  };
+
   return (
     <div className="Home">
       <div className="Home__hero">
         <Hero />
       </div>
-      <div className="Home__search">
-        {/* <Search
-          handleChange={() => {
-            console.log("algo paso");
-          }}
-        /> */}
-      </div>
       <div className="Home__content">
         <div className="Home__content-items">
-          {/* {data.map((el) => (
-            <Card item={el} key={el._id} />
-          ))} */}
-          <Table items={data} />
+          <Table items={data} handleSelected={handleInformation} />
         </div>
-        <div className="Home__content-details">algo</div>
+        <div
+          className={`Home__content-details ${
+            state.item == null && "inactive"
+          }`}
+        >
+          {state.item && (
+            <HiringDetails
+              employee={state.item}
+              handleClick={() => setState({ item: null })}
+            />
+          )}
+        </div>
       </div>
     </div>
   );

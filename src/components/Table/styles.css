@@ -52,3 +52,14 @@
   justify-content: center;
   height: 70px;
 }
+
+.Table__button {
+  padding: 0.4rem 0.7rem;
+  background-color: #26c6da;
+  border: none;
+  color: white;
+  border-radius: 4px;
+}
+.Table__button:hover {
+  box-shadow: 0 6px 20px 0 rgba(38, 198, 218, 0.5) !important;
+}
