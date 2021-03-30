@@ -45,8 +45,13 @@ const Table = (props) => {
 
   useEffect(() => {
     let paginatedData = createPagination(props.items);
-    setState({ ...state, data: paginatedData });
-  }, []);
+    setState((state) => {
+      return {
+        ...state,
+        data: paginatedData,
+      };
+    });
+  }, [props.items]);
 
   const handlePagination = () => {
     if (state.data.length === 0) return;
