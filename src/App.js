@@ -1,6 +1,7 @@
 import Card from "./components/Card";
 import Hero from "./components/Hero";
 import Search from "./components/Search";
+import Table from "./components/Table";
 import "./Home.css";
 
 function App() {
@@ -413,16 +414,20 @@ function App() {
         <Hero />
       </div>
       <div className="Home__search">
-        <Search
+        {/* <Search
           handleChange={() => {
             console.log("algo paso");
           }}
-        />
+        /> */}
       </div>
       <div className="Home__content">
-        {data.map((el) => (
-          <Card item={el} key={el._id} />
-        ))}
+        <div className="Home__content-items">
+          {/* {data.map((el) => (
+            <Card item={el} key={el._id} />
+          ))} */}
+          <Table items={data} />
+        </div>
+        <div className="Home__content-details">algo</div>
       </div>
     </div>
   );
