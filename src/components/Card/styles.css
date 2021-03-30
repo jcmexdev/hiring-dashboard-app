@@ -1,0 +1,27 @@
+.Card {
+  box-shadow: 0px 2px 12px -6px rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  padding: 1rem;
+}
+
+.Card:hover {
+  box-shadow: 0px 2px 20px -4px rgba(0, 0, 0, 0.3);
+  transition: all 400ms;
+}
+
+.Card__name h2 {
+  font-size: 18px;
+  color: #333333;
+}
+
+.Card__job h3 {
+  font-size: 14px;
+  font-weight: bold;
+  border-bottom: 1px dashed #2196f3;
+  padding-bottom: 0.5rem;
+  color: #333333;
+}
+
+.Card__experience {
+  padding-top: 0.5rem;
+}
