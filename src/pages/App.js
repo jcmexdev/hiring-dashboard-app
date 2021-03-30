@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import Hero from "./components/Hero";
-import HiringDetails from "./components/HiringDetails";
-import Table from "./components/Table";
-import Search from "./components/Search";
+import Hero from "../components/Hero";
+import HiringDetails from "../components/HiringDetails";
+import Table from "../components/Table";
+import Search from "../components/Search";
 import "./Home.css";
 
 function App() {

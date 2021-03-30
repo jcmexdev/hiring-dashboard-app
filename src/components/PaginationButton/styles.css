@@ -9,6 +9,6 @@
 
 .Pagination_button--active {
   color: white;
-  background-color: #3f51b5;
+  background-color: var(--color-secondary);
   font-weight: bold;
 }

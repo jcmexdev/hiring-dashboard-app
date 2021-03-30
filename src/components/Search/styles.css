@@ -4,15 +4,16 @@
   justify-content: center;
   align-items: center;
   width: 50%;
+  min-width: 300px;
   padding: 0rem 1rem;
   height: 40px;
   border-radius: 50px;
-  box-shadow: 0 0 20px rgba(200, 200, 200, 0.3);
+  box-shadow: var(--box-shadow);
 }
 
 .Search input {
   flex: 1;
-  min-width: 300px;
+  min-width: 200px;
   border: none;
   outline: none;
   padding: 0.4rem;

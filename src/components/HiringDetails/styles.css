@@ -2,7 +2,7 @@
   padding: 1rem;
   background: white;
   border-radius: 4px;
-  box-shadow: 0px 0px 10px rgba(100, 100, 100, 0.2);
+  box-shadow: var(--box-shadow);
   position: relative;
 }
 
@@ -49,7 +49,7 @@
 }
 
 .HiringDetails__times:hover {
-  background-color: #651fff;
+  background-color: var(--color-secondary);
   font-weight: bold;
   color: white;
 }

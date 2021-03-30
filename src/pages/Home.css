@@ -1,7 +1,7 @@
 .Home {
   width: 100%;
   min-height: 100vh;
-  background-color: #f9f9f9;
+  background-color: var(--bg-main);
 }
 
 .Home__content {
@@ -14,19 +14,11 @@
   justify-content: center;
 }
 
-.grid {
-  flex: 1;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  grid-auto-rows: minmax(120px, auto);
-  gap: 1em;
-}
-
 .Home__content-items {
   flex: 1;
 }
 
 .Home__content-details {
   width: 400px;
-  margin-top: 1.5rem;
+  margin-top: 2.5rem;
 }

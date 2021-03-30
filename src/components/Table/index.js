@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import EmployeeRow from "../EmployeeRow";
 import PaginationButton from "../PaginationButton";
 import "./styles.css";
 
@@ -53,36 +54,10 @@ const Table = (props) => {
     });
   }, [props.items]);
 
-  const handlePagination = () => {
+  const handlePaginationItems = () => {
     if (Object.keys(state.data).length === 0) return;
-    //todo component
     return state.data[state.page].map((el) => {
-      return (
-        <tr key={el.id}>
-          <td>
-            <img
-              src="http://via.placeholder.com/40x40"
-              alt="Avatar"
-              className="Table__avatar"
-              width="30"
-            />
-          </td>
-          <td>
-            <strong>{el.nombre}</strong>
-          </td>
-          <td>{el.puesto}</td>
-          <td>{el.experiencia} Años</td>
-          <td>{el.edad} Años</td>
-          <td>
-            <button
-              className="Table__button"
-              onClick={() => props.handleSelected(el)}
-            >
-              Ver Info
-            </button>
-          </td>
-        </tr>
-      );
+      return <EmployeeRow item={el} handleSelected={props.handleSelected} />;
     });
   };
 
@@ -90,20 +65,20 @@ const Table = (props) => {
     <div className="Table">
       <div className="Table__title">
         <h3>Lista de personal</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>Avatar</th>
-              <th>Nombre</th>
-              <th>Puesto</th>
-              <th>Experiencia</th>
-              <th>Edad</th>
-              <th>Acciones</th>
-            </tr>
-          </thead>
-          <tbody>{handlePagination()}</tbody>
-        </table>
       </div>
+      <table>
+        <thead className="Table__header">
+          <tr>
+            <th>Avatar</th>
+            <th>Nombre</th>
+            <th>Puesto</th>
+            <th>Experiencia</th>
+            <th>Edad</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody className="Table__body">{handlePaginationItems()}</tbody>
+      </table>
       <div className="Table__pagination">{renderPages()}</div>
     </div>
   );

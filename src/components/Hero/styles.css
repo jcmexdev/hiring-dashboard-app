@@ -3,4 +3,14 @@
   height: 60px;
   background: linear-gradient(45deg, #6200ea, #1976d2);
   color: white;
+  display: flex;
+  align-items: center;
+}
+
+.Hero__brand {
+  width: 60px;
+}
+
+.Hero__title {
+  font-weight: bold;
 }

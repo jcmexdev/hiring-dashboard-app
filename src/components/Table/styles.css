@@ -6,44 +6,44 @@
   width: 100%;
   border-spacing: 0px;
   border-collapse: separate;
+  box-shadow: var(--box-shadow);
 }
 
 .Table table tr:first-of-type {
   height: 40px;
+  font-size: 0.9rem;
 }
 
-.Table thead {
-  color: white;
-  background-color: #651fff;
+.Table__header {
+  color: var(--color-white);
+  background-color: var(--color-primary);
 }
-
 .Table td,
 .Table th {
   padding: 0.1rem 0.4rem;
 }
 
 .Table td {
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid var(--border-table);
 }
 
-.Table table tbody td:first-of-type {
+.Table__body td:first-of-type {
   text-align: center;
 }
 
 .Table td:nth-child(odd) {
-  border-right: 1px solid #e0e0e0;
-  border-left: 1px solid #e0e0e0;
-  background: #f8f8f8;
+  border-right: 1px solid var(--border-table);
+  border-left: 1px solid var(--border-table);
 }
 
-.Table table tbody tr:nth-child(even) td {
-  background: #f1f1f1;
+.Table__body tr:nth-of-type(even) {
+  background: var(--bg-table-tr);
 }
 
 .Table__avatar {
-  width: 40px;
+  width: 30px;
   border-radius: 50%;
-  box-shadow: 4px 4px 7px rgba(50, 50, 50, 0.2);
+  box-shadow: var(--box-shadow);
 }
 
 .Table__pagination {
@@ -55,11 +55,19 @@
 
 .Table__button {
   padding: 0.4rem 0.7rem;
-  background-color: #26c6da;
+  background-color: var(--color-secondary);
   border: none;
-  color: white;
+  color: var(--color-white);
   border-radius: 4px;
 }
 .Table__button:hover {
-  box-shadow: 0 6px 20px 0 rgba(38, 198, 218, 0.5) !important;
+  box-shadow: var(--box-shadow-blue);
+}
+
+.Table__title {
+  margin-bottom: 1rem;
+}
+
+.Table__body tr:hover {
+  background: rgba(100, 100, 100, 0.2);
 }

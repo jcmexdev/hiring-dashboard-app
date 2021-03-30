@@ -15,3 +15,16 @@ body {
 .inactive {
   display: none;
 }
+
+:root {
+  --bg-main: #f9f9f9;
+  --color-primary: #3f39de;
+  --color-secondary: #26c6da;
+  --color-white: #ffffff;
+  --color-headers: #3f39de;
+  --border-table: #e0e0e0;
+  --bg-table: #f8f8f8;
+  --bg-table-tr: #f1f1f1;
+  --box-shadow: 0 0 20px rgba(200, 200, 200, 0.3);
+  --box-shadow-blue: 0 6px 20px 0 rgba(38, 198, 218, 0.5);
+}
