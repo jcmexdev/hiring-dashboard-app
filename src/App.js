@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Hero from "./components/Hero";
 import HiringDetails from "./components/HiringDetails";
 import Table from "./components/Table";
+import Search from "./components/Search";
 import "./Home.css";
 
 function App() {
@@ -408,10 +409,40 @@ function App() {
     },
   ];
 
-  const [state, setState] = useState({ item: null });
+  const [state, setState] = useState({ item: null, data: [] });
+
+  useEffect(() => {
+    setState((state) => {
+      return {
+        ...state,
+        data,
+      };
+    });
+  }, []);
 
   const handleInformation = (item) => {
-    setState({ item });
+    setState((state) => {
+      return {
+        ...state,
+        item,
+      };
+    });
+  };
+
+  const filterData = (query) => {
+    return data.filter(
+      (el) =>
+        el.nombre.toLowerCase().includes(query.toLowerCase()) ||
+        el.puesto.toLowerCase().includes(query.toLowerCase())
+    );
+  };
+
+  const handleSearch = (query) => {
+    const results = filterData(query);
+    setState({
+      item: null,
+      data: results || [],
+    });
   };
 
   return (
@@ -419,9 +450,12 @@ function App() {
       <div className="Home__hero">
         <Hero />
       </div>
+      <div className="Home__search">
+        <Search onSearch={handleSearch} />
+      </div>
       <div className="Home__content">
         <div className="Home__content-items">
-          <Table items={data} handleSelected={handleInformation} />
+          <Table items={state.data} handleSelected={handleInformation} />
         </div>
         <div
           className={`Home__content-details ${
@@ -431,7 +465,11 @@ function App() {
           {state.item && (
             <HiringDetails
               employee={state.item}
-              handleClick={() => setState({ item: null })}
+              handleClick={() =>
+                setState((state) => {
+                  return { ...state, item: null };
+                })
+              }
             />
           )}
         </div>

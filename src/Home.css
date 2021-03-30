@@ -2,11 +2,16 @@
   width: 100%;
   min-height: 100vh;
   background-color: #f9f9f9;
-  padding: 0 2rem 4rem 2rem;
 }
 
 .Home__content {
   display: flex;
+  padding: 0 2rem 4rem 2rem;
+}
+.Home__search {
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: center;
 }
 
 .grid {

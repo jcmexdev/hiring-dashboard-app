@@ -10,7 +10,7 @@ const Table = (props) => {
     const length = data.length;
     let pagination = {};
     for (let index = 0; index < top; index++) {
-      if (index + 1 === top) {
+      if (index + 1 >= top) {
         pagination = {
           ...pagination,
           [index + 1]: data.slice(index * 10, length),
@@ -54,7 +54,8 @@ const Table = (props) => {
   }, [props.items]);
 
   const handlePagination = () => {
-    if (state.data.length === 0) return;
+    if (Object.keys(state.data).length === 0) return;
+    //todo component
     return state.data[state.page].map((el) => {
       return (
         <tr key={el.id}>
