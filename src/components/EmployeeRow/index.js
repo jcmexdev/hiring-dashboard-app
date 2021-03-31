@@ -5,7 +5,7 @@ const EmployeeRow = ({ item, handleSelected }) => {
     <tr key={item.id}>
       <td>
         <img
-          src="http://via.placeholder.com/40x40"
+          src="https://via.placeholder.com/40x40"
           alt="Avatar"
           className="Table__avatar"
           width="30"

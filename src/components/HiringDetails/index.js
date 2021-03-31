@@ -9,7 +9,7 @@ const HiringDetails = ({ employee, handleClick }) => {
     <div className="HiringDetails">
       <div className="HiringDetails__profile">
         <img
-          src="http://via.placeholder.com/80x80"
+          src="https://via.placeholder.com/80x80"
           alt={"Avatar " + employee.nombre}
           className="Table__avatar"
           width="30"
