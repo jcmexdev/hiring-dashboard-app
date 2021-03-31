@@ -1,0 +1,24 @@
+language: node_js
+cache:
+  directories:
+    - node_modules
+    - ~/.npm
+node_js:
+  - node
+git:
+  depth: 3
+script:
+  - npm run build
+notifications:
+  email:
+    recipients:
+      - carlos.garcia.esquivel@live.com.mx
+    on_success: always
+    on_failure: always
+deploy:
+  provider: heroku
+  api_key:
+    secure: fKWH81mRQ/HW8ylUrZpQsyXxdtNfAAVquVreUPz22RGq/QoveunR8c+7KklqWECd2xhv10TlDTjfm0kH77kt0x0UAc4UMFxogTVflThjkxzR4tStlSARqSllvfon7o4ik3LEYfgwX4NQAar32pA+XeCR275TZm9FylBxHLvOx4pgDxbp1tDeU6XAeCcIKfeylghDFe68KAxH8degh8s80DkchY/L8CwnpxPsd4sk6nvZ4aRxv1jbhJhe08kw8pmddIc/RLnJtGE39krZ0mKUyil0lRM5eV5srYRh+Mb053OY6qh1WXrHc+PvlKcyPfm/LSMv7fA9s7LQoH1D8OsFekfsqK1MJZWim8Kn36/QxkcczlbJSrfnMhOMqWflhJwhjZQY8xBjWs1HQUjEXWaoT1RVWx0916ya7lkGnzDVXwJqva9rn0YlvGQQNOw8t2CfaJuHP0xd6ctiAFDS9H+bHQ04tjJ/fM4Ut/Pn6ZRtWgo8WSCR5sj1DJfeyQ2/j+FRbpiOeKEeaySKta42WcHeLcTSMbRR+jNWbc0kZhQ5Dn1+AIOWJvuR5MRx8EhXOUUqjDnkwnbgefS1sthz5Z+4/d+W6yhhpfK3l7Wiki8YghEFiwxApaJu2yMt2miZi+T+ay9CnWvhteGhJIp3kZRFShjzuWxU+NfigT+yEh/Z/pg=
+  app: hiring-dashboard-app
+  on:
+    repo: jcmexdev/hiring-dashboard-app
