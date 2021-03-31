@@ -3,6 +3,7 @@ import Hero from "../components/Hero";
 import HiringDetails from "../components/HiringDetails";
 import Table from "../components/Table";
 import Search from "../components/Search";
+import * as Api from "../utils/Api";
 import "./Home.css";
 
 function App() {
@@ -409,14 +410,17 @@ function App() {
     },
   ];
 
-  const [state, setState] = useState({ item: null, data: [] });
+  const [state, setState] = useState({ item: null, data: [], store: [] });
 
   useEffect(() => {
-    setState((state) => {
-      return {
-        ...state,
-        data,
-      };
+    Api.request().then(({ data: response }) => {
+      setState((state) => {
+        return {
+          ...state,
+          data: response.concat(data),
+          store: response.concat(data),
+        };
+      });
     });
   }, []);
 
@@ -430,7 +434,7 @@ function App() {
   };
 
   const filterData = (query) => {
-    return data.filter(
+    return state.store.filter(
       (el) =>
         el.nombre.toLowerCase().includes(query.toLowerCase()) ||
         el.puesto.toLowerCase().includes(query.toLowerCase())
@@ -438,10 +442,21 @@ function App() {
   };
 
   const handleSearch = (query) => {
+    if (query === "") {
+      setState((state) => {
+        return {
+          ...state,
+          data: state.store,
+        };
+      });
+    }
     const results = filterData(query);
-    setState({
-      item: null,
-      data: results || [],
+    setState((state) => {
+      return {
+        ...state,
+        item: null,
+        data: results,
+      };
     });
   };
 
